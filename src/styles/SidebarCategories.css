@@ -1,0 +1,28 @@
+.SidebarCategories {
+    background-color: #b0aeae;
+    padding: 1rem;
+    height: 100vh;
+    
+    top: 0;
+    
+    padding: 1rem;
+  }
+  
+  .SidebarCategories nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .SidebarCategories nav ul li {
+    margin-bottom: 1rem;
+  }
+  
+  .SidebarCategories nav ul li a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .SidebarCategories nav ul li a:hover {
+    color: #007bff;
+  }
+  

@@ -1,0 +1,26 @@
+.products {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 16px;
+    padding: 20px;
+  }
+  
+  .product {
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 4px;
+    transition: box-shadow 0.3s;
+  }
+  
+  .product:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .product h2 {
+    margin: 0 0 10px;
+    font-size: 1.25em;
+  }
+  
+  .product p {
+    margin: 0 0 10px;
+  }
