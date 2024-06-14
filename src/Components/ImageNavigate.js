@@ -3,6 +3,7 @@ import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
 
+//rotera bild bakåt eller framåt för de objekt som har fler bilder
 const ImageNavigate = ({ images, currentImageIndex, setCurrentImageIndex }) => {
   const nextImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === images.length - 1 ? 0 : prevIndex + 1));
@@ -11,7 +12,7 @@ const ImageNavigate = ({ images, currentImageIndex, setCurrentImageIndex }) => {
   const prevImage = () => {
     setCurrentImageIndex((prevIndex) => (prevIndex === 0 ? images.length - 1 : prevIndex - 1));
   };
-  
+  //ta emot props från produktInfo
   return (
     <div className="relative">
       <img src={images[currentImageIndex]} alt={`Product ${currentImageIndex}`} className="w-full md:w-96 h-auto object-cover" />

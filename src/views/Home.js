@@ -1,15 +1,14 @@
 import React, { useContext } from 'react';
 import { UserIdContext } from '../Contexter/UserIdContext';
-import useFetchProductsFromCategory from '../hooks/FetchProductsFromCategory';
+import useFetchProductsFromCategory from '../hooks/useFetchProductsFromCategory';
 import ProductSlider from '../Components/ProductSlider';
 import { Link } from 'react-router-dom';
 
 const Home = () => {
   const category = 'sunglasses';
   const { products, loading, error } = useFetchProductsFromCategory(category);
-  const userID = useContext(UserIdContext);
-  console.log('User ID:', userID);
-
+ 
+  
 
     //kontrollera att api anrop gjorts innan renderingen så /home inte crashar
     if (loading) return <div>Loading...</div>;

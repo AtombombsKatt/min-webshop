@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+//hämta relevanta kategorier slugs
 import relevantCategorySlugs from '../Components/RelevantCategorySlugs'; //mina kategorier .slug
 const useFetchCategories = () => {
   const [categories, setCategories] = useState([]);
@@ -15,7 +16,6 @@ const useFetchCategories = () => {
         }
         const data = await response.json();
 
-        console.log('Fetched categories:', data);
 
         
       
@@ -23,7 +23,7 @@ const useFetchCategories = () => {
         const relevantCategories = data.filter(category => 
           relevantCategorySlugs.includes(category.slug)
         );
-        console.log('Relevant categories:', relevantCategories);
+       
 
         setCategories(relevantCategories);
       } catch (error) {

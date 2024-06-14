@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
 import { CartContext } from '../Contexter/CartContext';
 import { Link } from 'react-router-dom';
-import TotalAmount from './TotalAmmount';
-import AdjustCartProduct from './AdjustCartProduct';
+import TotalAmount from '../Components/TotalAmmount';
+import AdjustCartProduct from '../Components/AdjustCartProduct';
 import { useCart } from '../Contexter/CartContext';
 const Cart = () => {
   const {cart} = useCart();
@@ -11,6 +11,7 @@ const Cart = () => {
   return (
   <div className='mt-16 mb-16'>
     <h2 className='text-xl font-bold'>Items in Shopping Cart</h2>
+    {/* Kontrollera om cart är tom */}
     {cart.length === 0 ? (
       <p>Your cart is empty</p>
     ) : (

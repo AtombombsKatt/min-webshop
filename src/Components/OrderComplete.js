@@ -3,6 +3,7 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { useCart } from '../Contexter/CartContext';
 import { Link } from 'react-router-dom';
+import LogoText from './LogoText';
 const OrderComplete = ({ trigger, onClose }) => {
   const { cart } = useCart();
 
@@ -31,7 +32,8 @@ const OrderComplete = ({ trigger, onClose }) => {
           </ul>
           <div className='font-bold text-lg mb-4'>Total: ${calculateTotalPrice()}</div>
           <p className='text-green-500 font-semibold mb-4'>Payment Successful!</p>
-
+          {/* loggan i kvitto */}
+          <LogoText />
           {/* länk tillbaka till home '/' */}
           <Link to='/'>
             <button

@@ -1,28 +1,26 @@
 
-import './App.css';
+//conext providers
 import { ThemeProvider, useTheme, getTheme } from './Contexter/DarkmodeContext';
 import { UserIDProvider } from './Contexter/UserIdContext';
 import { CartProvider } from './Contexter/CartContext';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+//router
+import { BrowserRouter as Router, Routes, Route, useNavigate } from 'react-router-dom';
+//komponenter att rendera
+import Header from './views/Header';
+import Footer from './views/Footer';
+import Home from './views/Home';
+import SidebarCategories from './views/SidebarCategories';
+import Products from './views/Products';
+import ProductInfo from './views/ProductInfo';
+import Order from './views/Order';
+import CartView from './views/CartView'; 
 
-import Header from './Components/Header';
-import Footer from './Components/Footer';
-import Home from './Pages/Home';
-import SidebarCategories from './Components/SidebarCategories';
-import Products from './Components/Products';
-import ProductInfo from './Components/ProductInfo';
-
-import Order from './Components/Order';
 import { useState } from 'react';
-import { useNavigate } from 'react-router-dom';
 
-// npm install reactjs-popup
-//npm install react-toastify
-//npm install @fortawesome/free-regular-svg-icons
 
-import SearchResults from './hooks/useSearchResult';
-import useFetchCategories from './hooks/useFetchCategories';
-import CartView from './views/CartView';
+
+import SearchResults from './views/SearchResult';
+
 import { ToastContainer } from 'react-toastify';
 import 'slick-carousel/slick/slick.css'; 
 import 'slick-carousel/slick/slick-theme.css';
@@ -35,7 +33,7 @@ const AppContent = () => {
   const [searchWord, setSearchWord] = useState('');
   
 
-  const handleSelectCategory = (category) => { //gör egen krok för dom här sen
+  const handleSelectCategory = (category) => { //gör egen krok för dom här sen?
     setSelectedCategory(category.slug);
     setSearchWord(''); 
     navigate(`/products/category/${category.slug}`);
@@ -54,7 +52,7 @@ const AppContent = () => {
       style={{
         backgroundColor: currentTheme.backgroundColor,
         color: currentTheme.textColor,
-        minHeight: '100vh' //ta bort?
+        minHeight: '100vh' 
       }}
     >
       

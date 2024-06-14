@@ -57,86 +57,90 @@ const OrderFormular = () => {
   return (
     <div>
     <form onSubmit={handleSubmit} className='flex flex-col items-center p-4'>
-  <div className="flex flex-col sm:flex-row p-4 items-center"> 
+  <div className='flex flex-col sm:flex-row p-4 items-center'> 
     <label className='p-4' style={{minWidth: '150px'}}> 
       First Name:
     </label>
     <input
-      type="text"
-      name="firstName"
+      type='text'
+      name='firstName'
       value={formData.firstName}
       onChange={handleChange}
       placeholder={formErrors.firstName ? formErrors.firstName : 'First Name'}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
     />
   </div>
-  <div className="flex flex-col sm:flex-row p-4 items-center"> {/* Upprepa samma struktur för varje etikett och inputfält par */}
+  <div className='flex flex-col sm:flex-row p-4 items-center'> {/* Upprepa samma struktur för varje etikett och inputfält par */}
     <label className='p-4' style={{minWidth: '150px'}}>
       Last Name:
     </label>
     <input
-      type="text"
-      name="lastName"
+      type='text'
+      name='lastName'
       value={formData.lastName}
       onChange={handleChange}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
+      placeholder={formErrors.lastName ? formErrors.lastName : 'Last name'}
     />
   </div>
-  <div className="flex flex-col sm:flex-row p-4 items-center"> {/* Upprepa för resten av inputfälten */}
+  <div className='flex flex-col sm:flex-row p-4 items-center'> {/* Upprepa för resten av inputfälten */}
     <label className='p-4' style={{minWidth: '150px'}}>
       Phone Number:
     </label>
     <input
-      type="text"
-      placeholder="+46" 
-      name="phoneNumber"
+      type='text'
+      name='phoneNumber'
       value={formData.phoneNumber}
       onChange={handleChange}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
+      placeholder='+46 xxx xx xx'
      
     />
   </div>
-  <div className="flex flex-col sm:flex-row p-4 items-center">
+  <div className='flex flex-col sm:flex-row p-4 items-center'>
     <label className='p-4' style={{minWidth: '150px'}}>
       Email:
     </label>
     <input
-      type="email"
-      name="email"
+      type='email'
+      name='email'
       value={formData.email}
       onChange={handleChange}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
+      placeholder='Email @ '
     />
   </div>
-  <div className="flex flex-col sm:flex-row p-4 items-center">
+  <div className='flex flex-col sm:flex-row p-4 items-center'>
     <label className='p-4' style={{minWidth: '150px'}}>
       Postal Code:
     </label>
     <input
-      type="text"
-      name="postalCode"
+      type='text'
+      name='postalCode'
       value={formData.postalCode}
       onChange={handleChange}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
+      placeholder='83456'
     />
   </div>
-  <div className="flex flex-col sm:flex-row p-4 items-center">
+  <div className='flex flex-col sm:flex-row p-4 items-center'>
     <label className='p-4' style={{minWidth: '150px'}}>
       City:
     </label>
     <input
-      type="text"
-      name="city"
+      type='text'
+      name='city'
       value={formData.city}
       onChange={handleChange}
-      className="w-full sm:w-2/3 h-10 p-2 border rounded"
+      className='w-full sm:w-2/3 h-10 p-2 border rounded'
+      placeholder='Stockholm'
     />
   </div>
-  <div className="flex flex-col sm:flex-row items-center">
+  <div className='flex flex-col sm:flex-row items-center'>
     {/* checkbox */}
     <input
-      type="checkbox"
-      name="emailPromotion"
+      type='checkbox'
+      name='emailPromotion'
       checked={formData.emailPromotion} 
       onChange={handleChange}
     />
@@ -144,7 +148,7 @@ const OrderFormular = () => {
       I would like to receive emails about special offers and promotions
     </label>
   </div>
-  <button type="submit">Place Order</button>
+  <button type='submit'>Place Order</button>
 
 </form>
 

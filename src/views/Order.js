@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from 'react';
-import OrderFormular from './OrderFormular';
-import TotalAmount from './TotalAmmount';
+import OrderFormular from '../Components/OrderFormular';
+import TotalAmount from '../Components/TotalAmmount';
 import { useCart } from '../Contexter/CartContext';
 const Order = () => {
   const { cart } = useCart();

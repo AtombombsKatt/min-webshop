@@ -11,7 +11,7 @@ const TotalAmount = () => {
     if (product.category === 'sunglasses') {
       price *= 0.7; // 30% rabatt
     }
-
+// returnera pris * antal
     return total + (price * product.quantity);
   }, 0);
   return (

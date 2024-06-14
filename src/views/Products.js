@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link, useParams } from 'react-router-dom';
-import useFetchProductsFromCategory from '../hooks/FetchProductsFromCategory'; // hook för att hämta produkter från vald kategori
+import useFetchProductsFromCategory from '../hooks/useFetchProductsFromCategory'; // hook för att hämta produkter från vald kategori
 import useProductSort from '../hooks/useProductSort'; //hook för att sortera produkter
-import StarRating from './StarRating';
+import StarRating from '../Components/StarRating';
 const Products = () => {
 
   const { category } = useParams();
@@ -46,13 +46,13 @@ const Products = () => {
         </select>
       </div>
 
-      <div className='flex flex-wrap pl-48 m-6  border-b border-gray-300'>
+      <div className='flex flex-wrap justify-center md:justify-start pl-6 md:pl-48 m-6 border-b border-gray-300'>
         {/* gå igenom products, hämta bild, titel osv */}
         {sortedProducts.map(product => (
           <div className='flex -1 p-4' key={product.id}>
             {/* gå till produktinfo sidan */}
             <Link to={`/products/${product.id}`}> 
-              <img src={product.thumbnail} alt={product.title} width={400} />
+              <img src={product.thumbnail} alt={product.title} className='w-full h-auto' />
               <h2 className='text text-center text-lg font-bold mb-2'>{product.title}</h2>
               {/* om produkten har kategori solbrillor, stryk pris lägg till rabatt */}
               <p className={` text-center text-lg font-bold mb-2 ${product.category === 'sunglasses' ? 'line-through' : 'no-underline'}`}>

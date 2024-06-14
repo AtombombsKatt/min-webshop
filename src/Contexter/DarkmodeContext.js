@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const DarkmodeContext = createContext();
 
@@ -27,9 +27,14 @@ const themes = { // teman
   }
 };
 //theme usestate för att växla mellan teman
-export const ThemeProvider = ({ children }) => {   
-  const [theme, setTheme] = useState('light');
+export const ThemeProvider = ({ children }) => {
+  // Lägg in temat i localstorage så det sparas på refresh
+  const storedTheme = localStorage.getItem('theme');
+  const [theme, setTheme] = useState(storedTheme || 'light'); // måste ha || light default annars type error om den sparat dark,blue
 
+  useEffect(() => {
+    localStorage.setItem('theme', theme);
+  }, [theme]);
   const toggleTheme = (newTheme) => { 
     setTheme(newTheme);
   };
@@ -40,6 +45,6 @@ export const ThemeProvider = ({ children }) => {
     </DarkmodeContext.Provider>
   );  //themes[theme] samma sak som theme['light'] tilldela currutenTheme
 };
-
+//samla logik i useTheme så kan använda den istället
 export const useTheme = () => useContext(DarkmodeContext);
 export const getTheme = (themeName) => themes[themeName];

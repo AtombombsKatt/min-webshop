@@ -26,7 +26,7 @@ const useSearchProducts = (searchWord) => {
 
     searchProducts();
   }, [searchWord]);
-
+  
   return { products, loading, error };
 };
 

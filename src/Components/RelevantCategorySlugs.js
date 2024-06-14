@@ -1,4 +1,4 @@
-// relevantCategories.js
+//mina produkt kategorier
 
 const relevantCategorySlugs = [
     'mens-shirts',
