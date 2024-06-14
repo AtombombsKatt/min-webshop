@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import useFetchCategories from '../hooks/FetchCategories';
+import useFetchCategories from '../hooks/useFetchCategories';
 import { useTheme } from '../Contexter/DarkmodeContext';
 const SidebarCategories = ({ onSelectCategory }) => {
   const { categories, loading, error } = useFetchCategories();

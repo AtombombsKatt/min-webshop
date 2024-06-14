@@ -5,7 +5,7 @@ const useProductSort = (products, loading, error) => {
 
   useEffect(() => {
     if (!loading && !error) {
-      setSortedProducts([...products]); // Kopiera produkterna för att undvika att modifiera originaldata
+      setSortedProducts([...products]); // Kopira  för att undvika att ändra originaldata
     }
   }, [loading, error, products]);
 
@@ -27,7 +27,7 @@ const useProductSort = (products, loading, error) => {
     const sorted = [...sortedProducts].sort((a, b) => b.rating - a.rating);
     setSortedProducts(sorted);
   };
-
+//returnera sortedproducts, pris & rating
   return { sortedProducts, sortByPriceLowToHigh, sortByPriceHighToLow, sortByRatingLowToHigh,sortByRatingHighToLow};
 };
 

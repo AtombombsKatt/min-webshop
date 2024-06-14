@@ -1,17 +1,13 @@
-import React, { useContext, useEffect } from 'react';
+import React, { useContext } from 'react';
 import { CartContext } from '../Contexter/CartContext';
 import { Link } from 'react-router-dom';
 import TotalAmount from './TotalAmmount';
 import AdjustCartProduct from './AdjustCartProduct';
-
+import { useCart } from '../Contexter/CartContext';
 const Cart = () => {
-  const { cart} = useContext(CartContext);
-
+  const {cart} = useCart();
  
-  // const calculateTotalPrice = (price, quantity) => {
-  //   return (price * quantity).toFixed(2);
-  // };
-//returnera cart.
+
   return (
   <div className='mt-16 mb-16'>
     <h2 className='text-xl font-bold'>Items in Shopping Cart</h2>

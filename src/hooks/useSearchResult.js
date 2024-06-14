@@ -3,7 +3,7 @@ import useFetchSearchProducts from './FetchSearchProducts';
 import relevantCategorySlugs from '../Components/RelevantCategorySlugs';
 import useFetchProductsFromCategory from './FetchProductsFromCategory';
 
-const SearchResults = ({ searchWord }) => {
+const useSearchResults = ({ searchWord }) => {
   const { products: allProducts, loading: allProductsLoading, error: allProductsError } = useFetchProductsFromCategory();
 
   const filteredProducts = allProducts.filter(product =>
@@ -33,4 +33,4 @@ const SearchResults = ({ searchWord }) => {
   );
 };
 
-export default SearchResults;
+export default useSearchResults;

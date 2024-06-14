@@ -1,8 +1,8 @@
 import React, { useContext } from 'react';
-import { CartContext } from '../Contexter/CartContext';
-
+import { useCart } from '../Contexter/CartContext';
+//hämta cart context
 const TotalAmount = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
 
   const totalAmount = cart.reduce((total, product) => {
     let price = product.price;

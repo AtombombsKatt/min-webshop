@@ -1,9 +1,9 @@
 import React, { useContext, useEffect } from 'react';
 import OrderFormular from './OrderFormular';
 import TotalAmount from './TotalAmmount';
-import { CartContext } from '../Contexter/CartContext';
+import { useCart } from '../Contexter/CartContext';
 const Order = () => {
-  const { cart } = useContext(CartContext);
+  const { cart } = useCart();
 
   return (
     <div className='flex flex-row items-center justify-center mt-6  shadow-md'>
@@ -16,8 +16,8 @@ const Order = () => {
           <ul>
              {/* gå igenom och visa products. rendera bild,titel,pris */}
             {cart.map((product, index) => (
-              <li key={index} className="flex items-center mb-4">
-                <img src={product.thumbnail} alt={product.title} className="w-44 h-44 object-cover mr-4" />
+              <li key={index} className='flex items-center mb-4'>
+                <img src={product.thumbnail} alt={product.title} className='w-44 h-44 object-cover mr-4' />
                 <div>
                 <h3 className='font-bold text-lg'>{product.title}</h3> 
                 {/* visa rabatt 30% om kategori är sunglasses */}
@@ -40,7 +40,7 @@ const Order = () => {
         
       )}
       <div>
-        <h1 className="text-2xl font-bold mb-4">Place Your Order</h1>
+        <h1 className='text-2xl font-bold mb-4'>Place Your Order</h1>
         {/* hämta formuläret för att lägga till order */}
         <OrderFormular />
       </div>

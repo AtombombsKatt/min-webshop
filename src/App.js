@@ -3,7 +3,6 @@ import './App.css';
 import { ThemeProvider, useTheme, getTheme } from './Contexter/DarkmodeContext';
 import { UserIDProvider } from './Contexter/UserIdContext';
 import { CartProvider } from './Contexter/CartContext';
-// import { FetchAPIProvider } from './Contexter/FetchAPIContext';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
@@ -21,8 +20,8 @@ import { useNavigate } from 'react-router-dom';
 //npm install react-toastify
 //npm install @fortawesome/free-regular-svg-icons
 
-import SearchResults from './hooks/SearchResult';
-import useFetchCategories from './hooks/FetchCategories';
+import SearchResults from './hooks/useSearchResult';
+import useFetchCategories from './hooks/useFetchCategories';
 import CartView from './views/CartView';
 import { ToastContainer } from 'react-toastify';
 import 'slick-carousel/slick/slick.css'; 
@@ -34,7 +33,7 @@ const AppContent = () => {
   const navigate = useNavigate();
   const [selectedCategory, setSelectedCategory] = useState('');
   const [searchWord, setSearchWord] = useState('');
-  const { categories } = useFetchCategories();
+  
 
   const handleSelectCategory = (category) => { //gör egen krok för dom här sen
     setSelectedCategory(category.slug);
@@ -94,6 +93,7 @@ const AppContent = () => {
   );
 };
 
+//appContent för att enkelt se providers som omsluter sidan
 function App() {
   return (
     <ThemeProvider>
@@ -110,7 +110,7 @@ function App() {
 }
 
 
-
 export default App;
+
 
         

@@ -1,25 +1,26 @@
 // ProductInfo.js
 import React from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams, useNavigate } from 'react-router-dom';
 import useFetchProductId from '../hooks/useFetchProductId';
-import { useContext } from 'react'; 
-import { CartContext } from '../Contexter/CartContext';
 import { useState } from 'react';
+import { useCart } from '../Contexter/CartContext';
+import StarRating from './StarRating';
+import ImageNavigate from './ImageNavigate';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faComment} from '@fortawesome/free-regular-svg-icons';
-
-import ImageNavigate from './ImageNavigate';
 import { toast } from 'react-toastify';
-import { useNavigate } from 'react-router-dom';
-import StarRating from './StarRating';
+
+
+
 
 const ProductInfo = () => {
   const { id } = useParams();
   const { product, loading, error } = useFetchProductId(id);
-  const { addToCart } = useContext(CartContext);
+  const { addToCart } = useCart();
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const navigate = useNavigate();
 
+//toastify meddelande, lagts i cart
   const handleAddToCart = () => {
     addToCart(product);
     toast.success(`${product.title} has been added to your cart!`, {
@@ -36,6 +37,7 @@ const ProductInfo = () => {
 console.log(product)
   return (
     <div className='flex flex-col items-center justify-center p-4 m-6  shadow-md rounded-lg max-w-3xl mx-auto'>
+      {/* rotera bild komponent */}
       <ImageNavigate
         images={product.images}
         currentImageIndex={currentImageIndex}

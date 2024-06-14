@@ -24,8 +24,8 @@ const Header = ({ onSearch }) => {
   const handleCartClick = () => {
     navigate('/cart');
   };
-//gör logo till en component
-  return (
+
+  return ( //darkmode styles
     <header style={{ backgroundColor: currentTheme.headerBackgroundColor, color: currentTheme.textColor }}>
       <nav>
         <div>

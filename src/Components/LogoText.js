@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faHippo } from '@fortawesome/free-solid-svg-icons';
-
+//enkel logga med importerad icon och font
 const LogoText = () => {
     return ( 
         <div className='flex flex-row'> 
