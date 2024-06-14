@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import OrderFormular from '../Components/OrderFormular';
 import TotalAmount from '../Components/TotalAmmount';
 import { useCart } from '../Contexter/CartContext';

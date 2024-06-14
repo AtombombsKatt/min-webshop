@@ -1,5 +1,4 @@
-import React, { useContext } from 'react';
-import { UserIdContext } from '../Contexter/UserIdContext';
+import React from 'react';
 import useFetchProductsFromCategory from '../hooks/useFetchProductsFromCategory';
 import ProductSlider from '../Components/ProductSlider';
 import { Link } from 'react-router-dom';

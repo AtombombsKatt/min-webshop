@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { useCart } from '../Contexter/CartContext';
 //hämta cart context
 const TotalAmount = () => {

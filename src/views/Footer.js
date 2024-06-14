@@ -1,6 +1,5 @@
 import React from 'react';
 import { useTheme } from '../Contexter/DarkmodeContext';
-import LogoText from '../Components/LogoText';
 const Footer = () => {
   const { currentTheme } = useTheme();
   return (
